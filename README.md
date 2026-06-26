@@ -8,11 +8,23 @@ An AI-powered support ticket analysis system for a Bangladeshi digital-finance p
 
 ## Setup Instructions
 1. Clone the repository to your local machine.
-2. Initialize the environment variables by copying the `.env.example` file:
-   ```bash
-   cp .env.example .env
+2. Create a `.env` file in the root directory with the following configuration (replace with your actual Groq API keys):
+
+   ```env
+   # Groq API Configuration
+   # Supports multiple API keys separated by commas for round-robin rotation
+   GROQ_API_KEY="your_groq_api_key_1,your_groq_api_key_2"
+
+   # Optional Groq Settings
+   # GROQ_MODEL="llama-3.3-70b-versatile"
+   # GROQ_TEMPERATURE="0.1"
+   # GROQ_MAX_TOKENS="1000"
+   # GROQ_MAX_RETRIES="3"
+   # GROQ_TIMEOUT_BUDGET_SECONDS="20.0"
+
+   # Optional App Settings
+   # COMPLAINT_MAX_LENGTH="10000"
    ```
-3. Open the `.env` file and add your Groq API key(s). *Note: The system supports multiple comma-separated keys for round-robin rotation to avoid rate limits.*
 
 ## Run Command
 ### Using Docker (Recommended)
