@@ -118,6 +118,7 @@ def _ensure_required_keys(parsed: dict) -> dict:
     Apply safe defaults for any required keys missing from the LLM response.
     Also normalise relevant_transaction_id empty string → None.
     """
+    parsed.setdefault("reasoning", "")
     parsed.setdefault("human_review_required", True)
     parsed.setdefault("confidence", 0.5)
     parsed.setdefault("reason_codes", [])

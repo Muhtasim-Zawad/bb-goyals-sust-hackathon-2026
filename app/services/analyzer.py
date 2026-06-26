@@ -180,6 +180,13 @@ Return only JSON matching the schema above. No extra text.
             logger.error("LLM call failed: %s — using fallback.", e)
             return _fallback_handler.build_response(req)
 
+        # Log the LLM's chain-of-thought reasoning (internal only)
+        reasoning = parsed.pop("reasoning", "")
+        if reasoning:
+            logger.info(
+                "LLM reasoning for %s: %s", req.ticket_id, reasoning
+            )
+
         # Blend confidence: formula (60%) + LLM self-report (40%)
         verdict = parsed.get("evidence_verdict", "insufficient_data")
         formula_conf = _routing_engine.compute_confidence(
