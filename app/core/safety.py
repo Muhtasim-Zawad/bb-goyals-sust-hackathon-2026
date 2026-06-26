@@ -105,7 +105,7 @@ class SafetyGuard:
             relevant_transaction_id=None,
             evidence_verdict=EvidenceVerdict.insufficient_data,
             case_type=CaseType.phishing_or_social_engineering,
-            severity=Severity.high,
+            severity=Severity.critical,
             department=Department.fraud_risk,
             agent_summary=(
                 "Complaint contains prompt injection or social engineering attempt. "
