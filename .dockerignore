@@ -1,0 +1,16 @@
+.git
+.gitignore
+.venv
+venv
+env
+.arhamkhan160/bb_goyals_sust_2026
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache
+.coverage
+htmlcov
+Dockerfile
+docker-compose.yml
+.dockerignore
